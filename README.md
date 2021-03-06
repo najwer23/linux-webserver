@@ -44,7 +44,7 @@ Back to Windows and open "C:\Windows\System32\drivers\etc\hosts" and add your IP
 ```
 http://192.168.1.38/     gaudi.com
 ```
-Type (gaudi.com) in your browser.
+Type (http://gaudi.com) in your browser.
 
 
 ## Useful commands Linux
