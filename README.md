@@ -60,6 +60,7 @@ cd /var/www/html
 git clone https://github.com/najwer23/antoni-gaudi.git
 
 sudo apt install php7.4-cli
-sudo apt install composer
 
+git clone https://github.com/najwer23/linux-webserver.git
+chmod 755 composer2.sh && ./composer2.sh && sudo mv composer.phar /usr/local/bin/composer
 ```
