@@ -53,3 +53,13 @@ Type (http://gaudi.com) in your browser.
 - To navigate up one directory level, use "cd .."
 - To navigate to the previous directory (or back), use "cd -"
 
+# Linux Web Server on Virtual Box - Symfony 5.2 (deploy)
+
+```
+cd /var/www/html
+git clone https://github.com/najwer23/antoni-gaudi.git
+
+sudo apt install php7.4-cli
+sudo apt install composer
+
+```
