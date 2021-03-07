@@ -50,28 +50,30 @@ Type (http://gaudi.com) in your browser.
 
 ```
 git clone https://github.com/najwer23/linux-webserver.git
-```
+chmod 755 apachephp74.sh
+./apachephp74.sh
 
-```
-sudo apt update
-sudo apt install php php7.4-cli php-7.4fpm php-7.4json php-7.4common php-7.4mysql php-7.4zip php-7.4gd php-7.4mbstring php-7.4curl php-7.4xml php-pear php7.4-bcmath
-```
-
-```
-
-chmod 755 composer2.sh && ./composer2.sh && sudo mv composer.phar /usr/local/bin/composer
-```
-
-
-```
 cd /var/www/html
 git clone https://github.com/najwer23/antoni-gaudi.git
-add file *.env
-```
 
-instalacja yarn 
-plik env 
-uprawnienia
-```
+mv .env /var/www/html/antoni-gaudi
 
+sudo chown -R www-data:www-data /var/www/html/antoni-gaudi
+sudo chmod -R 755 /var/www/html/antoni-gaudi
+
+composer update
+composer install
+
+npm update
+npm install
+
+yarn install
+yarn encore production
+
+chmod 755 virtualhost.sh
+./virtualhost.sh gaudi antoni-gaudi
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+php bin/console cache:clear --no-warmup
 systemctl reload apache2
+```
