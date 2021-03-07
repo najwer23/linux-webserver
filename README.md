@@ -55,13 +55,15 @@ Type (http://gaudi.com) in your browser.
 chmod 755 apachephp74.sh
 ./apachephp74.sh
 
-cd /var/www/html
+sudo nano /var/www/html/phpinfo.php
+<?php phpinfo( ); ?>
+
+cd /var/www/
 git clone https://github.com/najwer23/antoni-gaudi.git
+sudo chown -R www-data:www-data /var/www/antoni-gaudi/
+sudo chmod -R 755 /var/www/antoni-gaudi/
 
-mv .env /var/www/html/antoni-gaudi
-
-sudo chown -R www-data:www-data /var/www/html/antoni-gaudi
-sudo chmod -R 755 /var/www/html/antoni-gaudi
+mv .env /var/www/antoni-gaudi
 
 composer update
 composer install
@@ -72,11 +74,10 @@ npm install
 yarn install
 yarn encore production
 
-chmod 755 virtualhost.sh
-./virtualhost.sh gaudi antoni-gaudi
-sudo nano /etc/apache2/sites-available/000-default.conf
+sudo mv symfony.conf /etc/apache2/sites-available/
+sudo a2ensite symfony.conf
+sudo systemctl restart apache2.service
 
 php bin/console cache:clear --no-warmup
 sudo rm -dr /var/www/html/antoni-gaudi/var/
-systemctl reload apache2
 ```
