@@ -79,7 +79,7 @@ sudo mv symfony.conf /etc/apache2/sites-available/
 sudo a2ensite symfony.conf
 sudo systemctl restart apache2.service
 
-php bin/console cache:clear --no-warmup
+sudo php bin/console cache:clear --no-warmup
 sudo rm -dr /var/www/html/antoni-gaudi/var/
 
 sudo composer dump-env prod
