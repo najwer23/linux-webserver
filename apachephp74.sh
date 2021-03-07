@@ -17,3 +17,13 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update
 sudo apt install yarn
 
+#npm
+sudo apt update
+sudo apt install nodejs
+nodejs -v
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+sudo apt install npm
+sudo npm i -g npm@next
