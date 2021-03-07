@@ -3,7 +3,10 @@
 ## General Info
 * Ubuntu Server 20.04.2 LTS (https://ubuntu.com/download/server)
 * Oracle VirtualBox 6.1
-
+* Bash scripts:
+```
+git clone https://github.com/najwer23/linux-webserver.git
+```
 ## Install apache2
 ```
 sudo apt-get install apache2
@@ -49,7 +52,6 @@ Type (http://gaudi.com) in your browser.
 # Linux Web Server on Virtual Box - Symfony 5.2 (deploy)
 
 ```
-git clone https://github.com/najwer23/linux-webserver.git
 chmod 755 apachephp74.sh
 ./apachephp74.sh
 
