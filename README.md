@@ -77,5 +77,6 @@ chmod 755 virtualhost.sh
 sudo nano /etc/apache2/sites-available/000-default.conf
 
 php bin/console cache:clear --no-warmup
+sudo rm -dr /var/www/html/antoni-gaudi/var/
 systemctl reload apache2
 ```
