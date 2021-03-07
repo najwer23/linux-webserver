@@ -3,6 +3,7 @@
 ## General Info
 * Ubuntu Server 20.04.2 LTS (https://ubuntu.com/download/server)
 * Oracle VirtualBox 6.1
+* Apache2 2.4.41
 * Bash scripts:
 ```
 git clone https://github.com/najwer23/linux-webserver.git
@@ -19,7 +20,7 @@ sudo apt-get install apache2
 sudo apt install net-tools
 ifconfig
 ```
-- Your dynamiclly IP is inet 192.168.38 (ifconfig). Type IP address in your browser (Chrome). You should see Apache2 Ubuntu Default Page
+- Your dynamiclly IP is inet 192.168.1.38 (ifconfig). Type IP address in your browser (Chrome). You should see Apache2 Ubuntu Default Page
 
 - By default, when you create a VM in VirtualBox, network adapter 1 is set to NAT. This will give the VM an IP address of 10.0.2.15/24 and a default route of 10.0.2.2 (which should be your host). Long story short, windows will not route to an address it is providing NAT for, without jumping through more hoops first. Shutting down the VM and changing the VM network adapter1 setting to "bridged" will allow your host (and any host on your local network) to communicate with that VM without any special routes added or hoops to jump through.
 
@@ -65,14 +66,14 @@ sudo chmod -R 755 /var/www/antoni-gaudi/
 
 mv .env /var/www/antoni-gaudi
 
-composer update
-composer install
+sudo composer update
+sudo composer install
 
-npm update
-npm install
+sudo npm update
+sudo npm install
 
-yarn install
-yarn encore production
+sudo yarn install
+sudo yarn encore production
 
 sudo mv symfony.conf /etc/apache2/sites-available/
 sudo a2ensite symfony.conf
@@ -80,4 +81,7 @@ sudo systemctl restart apache2.service
 
 php bin/console cache:clear --no-warmup
 sudo rm -dr /var/www/html/antoni-gaudi/var/
+
+sudo composer dump-env prod
+sudo yarn install
 ```
