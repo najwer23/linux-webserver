@@ -34,8 +34,8 @@ gateway 192.168.10.1
 network	192.168.10.0
 broadcast 192.168.10.255
 ```
-Restart network
 
+Restart network
 ```
 sudo systemctl restart systemd-networkd
 ```
@@ -56,11 +56,25 @@ Type (http://gaudi.com) in your browser.
 # Linux Web Server on Virtual Box - Symfony 5.2 (deploy)
 
 ```
-cd /var/www/html
-git clone https://github.com/najwer23/antoni-gaudi.git
+sudo apt update
+sudo apt install php php7.4-cli php-7.4fpm php-7.4json php-7.4common php-7.4mysql php-7.4zip php-7.4gd php-7.4mbstring php-7.4curl php-7.4xml php-pear php7.4-bcmath
+```
 
-sudo apt install php7.4-cli
-
+```
 git clone https://github.com/najwer23/linux-webserver.git
 chmod 755 composer2.sh && ./composer2.sh && sudo mv composer.phar /usr/local/bin/composer
 ```
+
+
+```
+cd /var/www/html
+git clone https://github.com/najwer23/antoni-gaudi.git
+add file *.env
+```
+
+instalacja yarn 
+plik env 
+uprawnienia
+```
+
+systemctl reload apache2
